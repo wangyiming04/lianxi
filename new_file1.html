@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				margin: 0 auto;
+				width: 500px;
+			}
+			#jumpTo{
+				color: red;
+				font-size:30px ;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var timer = 10;
+				//触发10S定时器
+				setInterval(function(){	
+					timer--;
+					document.getElementById("jumpTo").innerHTML = timer;
+					if(timer == 0){
+					clearInterval(timer);
+					location.href = './new_file.html'
+				}
+				},1000)
+				
+				document.getElementsByTagName("button")[0].onclick = function(){
+					location.href = './new_file.html'
+				}
+				
+			};
+			
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<h2>恭喜，支付成功</h2>
+			<span id = "jumpTo">10</span>秒后自动返回页面
+			<p><button>立即返回</button></p>
+			
+		</div>
+	</body>
+</html>
